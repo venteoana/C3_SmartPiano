@@ -14,6 +14,7 @@ public class CloseSessionView extends JFrame{
     public CloseSessionView(){
         JPanel jpSuperior = new JPanel();
         //jpSuperior.setLayout(new GridLayout(3, 1));
+        //prueba github
         jltext = new JLabel("       ¿Desea cerrar sesion?");
         JPanel jpView = new JPanel();
         jbclose = new JButton("Cerrar sesion");
