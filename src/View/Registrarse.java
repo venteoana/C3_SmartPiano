@@ -80,7 +80,7 @@ public class Registrarse extends JFrame implements ActionListener {
             String s5 = new String(s3);
             String s6 = new String(s4);
             //Si las contraseñas coinciden
-            if (s5.equals(s6))
+            if (s5.equals(s6) && s5 != null && s1 != null && s2 != null && s5.length() > 7 && !s1.isEmpty() && !s2.isEmpty())
             {
                 try
                 {
@@ -103,9 +103,17 @@ public class Registrarse extends JFrame implements ActionListener {
                     System.out.println(ex);
                 }
             }
-            else
+            else if (!s5.equals(s6))
             {
                 JOptionPane.showMessageDialog(btn1, "La contraseña no coincide.");
+            }
+            else if(s5 == null || s6 == null || s1 == null || s2 == null || s1.isEmpty() || s2.isEmpty() || s5.isEmpty() || s6.isEmpty())
+            {
+                JOptionPane.showMessageDialog(btn1, "Ningún campo puede estar vacío.");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(btn1, "La contraseña debe tener al menos 8 carácteres.");
             }
         }
         else
