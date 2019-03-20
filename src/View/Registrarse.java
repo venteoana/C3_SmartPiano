@@ -20,6 +20,7 @@ public class Registrarse extends JFrame implements ActionListener {
     private JTextField tf2;
     private JButton btn1;
     private JButton btn2;
+    private JButton btn3;
     private JPasswordField p1;
     private JPasswordField p2;
 
@@ -42,7 +43,9 @@ public class Registrarse extends JFrame implements ActionListener {
         p2 = new JPasswordField();
         btn1 = new JButton("Enviar");
         btn2 = new JButton("Limpiar");
+        btn3 = new JButton("Volver");
         btn1.addActionListener(this);
+        btn3.addActionListener(this);
         btn2.addActionListener(this);
         titulo.setBounds(100, 30, 400, 30);
         nombre.setBounds(100, 85, 200, 30);
@@ -54,7 +57,8 @@ public class Registrarse extends JFrame implements ActionListener {
         p1.setBounds(300, 165, 200, 30);
         p2.setBounds(300, 205, 200, 30);
         btn1.setBounds(90, 265, 100, 30);
-        btn2.setBounds(210, 265, 100, 30);
+        btn2.setBounds(190, 265, 100, 30);
+        btn3.setBounds(290, 265, 100, 30);
         add(titulo);
         add(nombre);
         add(tf1);
@@ -66,6 +70,7 @@ public class Registrarse extends JFrame implements ActionListener {
         add(p2);
         add(btn1);
         add(btn2);
+        add(btn3);
     }
     public void actionPerformed(ActionEvent e) {
         //Condición si se elige el botón Enviar
@@ -116,12 +121,16 @@ public class Registrarse extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(btn1, "La contraseña debe tener al menos 8 carácteres.");
             }
         }
-        else
+        else if (e.getSource() == btn2)
         {
             tf1.setText("");
             tf2.setText("");
             p1.setText("");
             p2.setText("");
+        }
+        else {
+            dispose();  // Se vuelve a la VistaInicial
+            new VistaInicial().setVisible(true);
         }
     }
     public static void main(String args[]) {
