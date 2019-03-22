@@ -27,7 +27,7 @@ public class VistaInicial extends JFrame implements ActionListener {
         btnInicio = new JButton("Iniciar Sesión");
         btnRegistro = new JButton("Registrarse");
         try{
-            logo = ImageIO.read(new File("/Users/Sofi/Documents/Barcelona/Segundo Año/Clases/DPO/Práctica 02/Logo.png"));
+            logo = ImageIO.read(new File("~/C3_SmartPiano/src/Logo.png"));
         } catch (IOException ex) {
             // handle exception...
         }
