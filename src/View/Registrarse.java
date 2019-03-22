@@ -89,19 +89,7 @@ public class Registrarse extends JFrame implements ActionListener {
             {
                 try
                 {
-                    Class.forName(""); //Driver
-                    Connection con = DriverManager.getConnection("", "", ""); //Conexión BBDD
-                    PreparedStatement ps = con.prepareStatement("insert into reg values(?,?,?,?,?,?)");
-                    ps.setString(1, s1);
-                    ps.setString(2, s2);
-                    ps.setString(3, s5);
-                    ps.setString(4, s6);
-                    ResultSet rs = ps.executeQuery();
-                    x++;
-                    if (x > 0)
-                    {
-                        JOptionPane.showMessageDialog(btn1, "Se ha creado el usuario satisfactoriamente.");
-                    }
+
                 }
                 catch (Exception ex)
                 {
