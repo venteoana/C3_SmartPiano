@@ -10,5 +10,6 @@ public class generacodigoamigo {
         System.out.println("Tu codigo amigo es:");
         System.out.println(text);
         return (text);
+        //
     }
 }
