@@ -11,7 +11,8 @@ import java.io.IOException;
 
 public class VistaInicial extends JFrame implements ActionListener {
 
-    private JButton btn;
+    private JButton btnInicio;
+    private JButton btnRegistro;
     private JLabel picLabel;
     private BufferedImage logo;
 
@@ -23,27 +24,34 @@ public class VistaInicial extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.lightGray);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("SmartPiano");
-        btn = new JButton("Empezar");
+        btnInicio = new JButton("Iniciar Sesión");
+        btnRegistro = new JButton("Registrarse");
         try{
             logo = ImageIO.read(new File("/Users/Sofi/Documents/Barcelona/Segundo Año/Clases/DPO/Práctica 02/Logo.png"));
         } catch (IOException ex) {
             // handle exception...
         }
         picLabel = new JLabel(new ImageIcon(logo));
-        btn.addActionListener(this);
-        btn.setBounds(250, 336, 100, 30);
+        btnInicio.addActionListener(this);
+        btnInicio.setBounds(130, 336, 150, 30);
+        btnRegistro.addActionListener(this);
+        btnRegistro.setBounds(320, 336, 150, 30);
         picLabel.setBounds(100, 15, 400, 316);
-        add(btn);
+        add(btnInicio);
+        add(btnRegistro);
         add(picLabel);
     }
     public void actionPerformed(ActionEvent e) {
         //Botón para empezar
-        if (e.getSource() == btn)
+        if (e.getSource() == btnInicio)
         {
-            //Se abre la Vista Principal
+            dispose();  // Se abre InciarSesión
+            new IniciarSesion().setVisible(true);
         }
         else
         {
+            dispose();  // Se abre Registrarse
+            new Registrarse().setVisible(true);
         }
     }
     public static void main(String args[]) {
